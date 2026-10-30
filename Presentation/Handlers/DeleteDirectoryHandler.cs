@@ -8,7 +8,6 @@ using Presentation.Services;
 using Sudzekai.WebOs.Core;
 using Sudzekai.WebOs.Plugin;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Presentation.Handlers
 {
@@ -57,9 +56,15 @@ namespace Presentation.Handlers
             "directory-delete",
             "directory-delete",
             ["directory"],
-            "Удаление директории",
-            "v1"
-        );
+            "Удаление директории"
+        )
+        {
+            RequestBody = new(PluginJsonContext.Default.DeleteDirectoryRequest),
+            Responses = [
+                new(201),
+                new(400, PluginJsonContext.Default.String)
+                ]
+        };
 
         public HandlerFilteringInfo? FilteringInfo { get; } = new(true);
     }

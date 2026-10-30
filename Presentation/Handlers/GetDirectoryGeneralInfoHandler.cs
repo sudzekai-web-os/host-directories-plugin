@@ -36,9 +36,14 @@ namespace Presentation.Handlers
             "directory-generalInfo",
             "directory-generalInfo",
             ["directory"],
-            "Основная информация о директории",
-            "v1"
-        );
+            "Основная информация о директории"
+        )
+        {
+            Responses = [
+                new(200, PluginJsonContext.Default.DirectoryGeneralInfoDto),
+                new(400, PluginJsonContext.Default.String)
+                ]
+        };
    
         public HandlerFilteringInfo? FilteringInfo { get; } = new(true);
     }

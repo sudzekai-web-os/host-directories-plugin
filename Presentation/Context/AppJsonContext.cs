@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 namespace Presentation.Context
 {
     [JsonSourceGenerationOptions(PropertyNameCaseInsensitive = true)]
-    [JsonSerializable(typeof(PluginInfo))]
+    [JsonSerializable(typeof(AssemblyInfo))]
     [JsonSerializable(typeof(DirectoryFilesDto))]
     [JsonSerializable(typeof(DirectoryDirectoriesDto))]
     [JsonSerializable(typeof(DirectoryGeneralInfoDto))]

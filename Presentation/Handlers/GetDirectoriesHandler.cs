@@ -36,10 +36,15 @@ namespace Presentation.Handlers
             "directory-directories",
             "directory-directories",
             ["directory"],
-            "Список директорий в директории",
-            "v1"
-        );
-    
+            "Список директорий в директории"
+        )
+        {
+            Responses = [
+                new(200, PluginJsonContext.Default.DirectoryDirectoriesDto),
+                new(400, PluginJsonContext.Default.String)
+                ]
+        };
+
         public HandlerFilteringInfo? FilteringInfo { get; } = new(true);
     }
 }

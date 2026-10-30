@@ -58,9 +58,15 @@ namespace Presentation.Handlers
             "directory-create",
             "directory-create",
             ["directory"],
-            "Создание директории",
-            "v1"
-        );
+            "Создание директории"
+        )
+        {
+            RequestBody = new(PluginJsonContext.Default.CreateDirectoryRequest),
+            Responses = [
+                new(200, PluginJsonContext.Default.DirectoryGeneralInfoDto),
+                new(400, PluginJsonContext.Default.String)
+                ]
+        };
 
         public HandlerFilteringInfo? FilteringInfo { get; } = new(true);
     }

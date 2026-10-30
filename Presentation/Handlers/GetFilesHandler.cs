@@ -36,9 +36,14 @@ namespace Presentation.Handlers
             "directory-files",
             "directory-",
             ["directory"],
-            "Список файлов в директории",
-            "v1"
-        );
+            "Список файлов в директории"
+        )
+        {
+            Responses = [
+                new(200, PluginJsonContext.Default.DirectoryFilesDto),
+                new(400, PluginJsonContext.Default.String)
+                ]
+        };
     
         public HandlerFilteringInfo? FilteringInfo { get; } = new(true);
     }

@@ -36,10 +36,15 @@ namespace Presentation.Handlers
             "directory-securityInfo",
             "directory-securityInfo",
             ["directory"],
-            "Инорфмация о безопасности директории",
-            "v1"
-        );
-    
+            "Инорфмация о безопасности директории"
+        )
+        {
+            Responses = [
+                new(200, PluginJsonContext.Default.WindowsDirectorySecurityInfo),
+                new(400, PluginJsonContext.Default.String)
+                ]
+        };
+
         public HandlerFilteringInfo? FilteringInfo { get; } = new(true);
     }
 }
